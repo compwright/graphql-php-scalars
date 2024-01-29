@@ -1,0 +1,46 @@
+{
+  "name": "compwright/graphql-php-scalars",
+  "description": "A collection of custom scalar types for usage with https://github.com/webonyx/graphql-php",
+  "license": "MIT",
+  "type": "library",
+  "keywords": [
+    "graphql",
+    "php"
+  ],
+  "authors": [
+    {
+      "name": "Benedikt Franke",
+      "email": "benedikt@franke.tech"
+    },
+    {
+      "name": "Jonathon Hill",
+      "email": "jonathon@compwright.com"
+    }
+  ],
+  "require": {
+    "php": "^7.4 || ^8",
+    "ext-json": "*",
+    "webonyx/graphql-php": "^15.9"
+  },
+  "require-dev": {
+    "ergebnis/composer-normalize": "^2.28",
+    "friendsofphp/php-cs-fixer": "^3.48",
+    "phpstan/phpstan": "^1.10",
+    "phpunit/phpunit": "^9.6 || ^10.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "Compwright\\GraphqlScalars\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Compwright\\GraphqlScalars\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "ergebnis/composer-normalize": true
+    }
+  }
+}
