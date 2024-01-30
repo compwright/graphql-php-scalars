@@ -23,7 +23,7 @@ If using the SDL, you can use the included ScalarDirectiveDecorator to load your
 You'll need this in your schema:
 
 ```graphql
-# used to specify the desired class to execute for a custom scalar 
+# used to specify the desired class to execute for a custom scalar
 directive @scalar(class: String!) on SCALAR
 
 # add the directive to each custom scalar
