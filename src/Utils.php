@@ -60,7 +60,6 @@ final class Utils
             throw new $exceptionClass("The given value can not be coerced to a string: {$safeValue}.");
         }
 
-        // @phpstan-ignore-next-line we have proven the value can be safely cast
         return (string) $value;
     }
 }

@@ -46,7 +46,6 @@ class JSON extends ScalarType
     protected function decodeJSON($value)
     {
         try {
-            // @phpstan-ignore-next-line cast mixed to string
             return json_decode((string) $value, false, 512, JSON_THROW_ON_ERROR);
         } catch (JsonException $jsonException) {
             throw new Error(
