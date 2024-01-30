@@ -18,6 +18,26 @@ A collection of custom scalar types for usage with https://github.com/webonyx/gr
 You can use the provided Scalars just like any other type in your schema definition.
 Check [SchemaUsageTest](tests/SchemaUsageTest.php) for an example.
 
+If using the SDL, you can use the included ScalarDirectiveDecorator to load your desired custom scalar class and attach it to a custom scalar type.
+
+You'll need this in your schema:
+
+```graphql
+# used to specify the desired class to execute for a custom scalar 
+directive @scalar(class: String!) on SCALAR
+
+# add the directive to each custom scalar
+scalar Email @scalar(class: "Compwright\\GraphqlScalars\\Email")
+```
+
+Then when loading the schema, pass an instance of ScalarDirectiveDecorator as the $typeConfigDecorator argument to BuildSchema::build():
+
+```php
+BuildSchema::build($ast, new ScalarDirectiveDecorator());
+```
+
+If multiple decorators are needed to implement various other things, they could be pipelined together using something like [https://github.com/thephpleague/pipeline](league\pipeline).
+
 ### [BigInt](src/BigInt.php)
 
 An arbitrarily long sequence of digits that represents a big integer.
